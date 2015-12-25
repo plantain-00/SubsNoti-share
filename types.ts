@@ -63,6 +63,10 @@ export interface UserResult {
 
 export interface CurrentUserResponse extends Response, UserResult { }
 
+export const enum UserStatus {
+    normal
+}
+
 
 export interface Organization {
     id: string;
