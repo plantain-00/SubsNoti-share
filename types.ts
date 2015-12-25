@@ -262,11 +262,11 @@ export interface AccessTokensResult {
 
 export interface AccessTokensResponse extends Response, AccessTokensResult { }
 
-export interface GeneratedAccessTokenResult {
+export interface AccessTokenResult {
     accessToken: string;
 }
 
-export interface GeneratedAccessTokenResponse extends Response, GeneratedAccessTokenResult { }
+export interface AccessTokenResponse extends Response, AccessTokenResult { }
 
 export interface TestSeed {
     user: {
