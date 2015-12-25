@@ -1,0 +1,22 @@
+{
+  "name": "subsnoti-share",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plantain-00/SubsNoti-share.git"
+  },
+  "author": "yao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/plantain-00/SubsNoti-share/issues"
+  },
+  "homepage": "https://github.com/plantain-00/SubsNoti-share#readme",
+  "devDependencies": {
+    "typescript": "^1.8.0-dev.20151224"
+  }
+}
