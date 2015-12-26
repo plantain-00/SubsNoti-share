@@ -185,7 +185,9 @@ export const loginStatus = stringEnumify({
 
 export interface Self<T> {
     state: T;
-    setState: (state: T) => void;
+    setState: (state: T, callback?: () => void) => void;
+    replaceState: (state: T, callback?: () => void) => void;
+    isMounted: () => boolean;
 }
 
 export const enum OrganizationStatus {
