@@ -91,14 +91,6 @@ export interface Theme {
     creator: User;
     owners: User[];
     watchers: User[];
-
-    createTimeText?: string;
-    updateTimeText?: string;
-    isWatching?: boolean;
-    isHovering?: boolean;
-    watchersEmails?: string;
-    ownersEmails?: string;
-    isOwner?: boolean;
 }
 
 export interface ThemesResult {
