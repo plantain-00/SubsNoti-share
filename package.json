@@ -2,9 +2,9 @@
   "name": "subsnoti-share",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "types.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "tslint": "tslint '*.ts'"
   },
   "repository": {
     "type": "git",
@@ -15,8 +15,5 @@
   "bugs": {
     "url": "https://github.com/plantain-00/SubsNoti-share/issues"
   },
-  "homepage": "https://github.com/plantain-00/SubsNoti-share#readme",
-  "devDependencies": {
-    "typescript": "^1.8.0-dev.20151224"
-  }
+  "homepage": "https://github.com/plantain-00/SubsNoti-share#readme"
 }
