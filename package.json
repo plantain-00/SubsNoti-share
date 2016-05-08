@@ -4,7 +4,9 @@
   "description": "",
   "main": "types.js",
   "scripts": {
-    "tslint": "tslint '*.ts'"
+    "tslint": "tslint '*.ts'",
+    "init": "npm i -g typescript tslint npm-check",
+    "restore": "npm i"
   },
   "repository": {
     "type": "git",
