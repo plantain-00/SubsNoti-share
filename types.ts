@@ -1,19 +1,3 @@
-export const enum StatusCode {
-    OK = 200,
-    createdOrModified = 201,
-    accepted = 202,
-    deleted = 204,
-    invalidRequest = 400,
-    unauthorized = 401,
-    forbidden = 403,
-    notFound = 404,
-    notAcceptable = 406,
-    gone = 410,
-    unprocessableEntity = 422,
-    tooManyRequest = 429,
-    internalServerError = 500
-}
-
 export const yes = "√";
 export const no = "X";
 
@@ -39,12 +23,10 @@ function stringEnumify<T extends { [prop: string]: "" | string }>(obj: T) {
 }
 
 export interface Response {
-    isSuccess: boolean;
-    statusCode: StatusCode;
+    status: number;
     errorMessage?: string;
     stack?: string;
     documentUrl?: string;
-    actualErrorMessage?: string;
 }
 
 
@@ -91,6 +73,14 @@ export interface Theme {
     creator: User;
     owners: User[];
     watchers: User[];
+
+    createTimeText?: string;
+    updateTimeText?: string;
+    isWatching?: boolean;
+    isHovering?: boolean;
+    watchersEmails?: string;
+    ownersEmails?: string;
+    isOwner?: boolean;
 }
 
 export interface ThemesResult {
@@ -189,11 +179,6 @@ export interface Self<T> {
 export const enum OrganizationStatus {
     normal
 }
-
-export interface E extends Error {
-    statusCode: StatusCode;
-}
-
 
 export interface VersionResult {
     version: string;
