@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/plantain-00/SubsNoti-share/issues"
   },
-  "homepage": "https://github.com/plantain-00/SubsNoti-share#readme"
+  "homepage": "https://github.com/plantain-00/SubsNoti-share#readme",
+  "devDependencies": {
+    "typescript": "^2.0.0-dev.20160706"
+  }
 }

@@ -22,73 +22,73 @@ function stringEnumify<T extends { [prop: string]: "" | string }>(obj: T) {
     return obj;
 }
 
-export interface Response {
+export type Response = {
     status: number;
-    errorMessage?: string;
-    stack?: string;
-    documentUrl?: string;
-}
+    errorMessage: string | undefined;
+    stack: string | undefined;
+    documentUrl: string | undefined;
+};
 
 
-export interface User {
+export type User = {
     id: string;
     name: string;
-    email?: string;
+    email: string | undefined;
     avatar: string;
-    createdOrganizationCount?: number;
-    joinedOrganizationCount?: number;
-}
+    createdOrganizationCount: number | undefined;
+    joinedOrganizationCount: number | undefined;
+};
 
-export interface UserResult {
+export type UserResult = {
     user: User;
-}
+};
 
-export interface CurrentUserResponse extends Response, UserResult { }
+export type CurrentUserResponse = Response & UserResult;
 
 export const enum UserStatus {
     normal
 }
 
 
-export interface Organization {
+export type Organization = {
     id: string;
     name: string;
-}
+};
 
-export interface OrganizationsResult {
+export type OrganizationsResult = {
     organizations: Organization[];
-}
+};
 
-export interface OrganizationsResponse extends Response, OrganizationsResult { }
+export type OrganizationsResponse = Response & OrganizationsResult;
 
 
-export interface Theme {
+export type Theme = {
     id: string;
     title: string;
     detail: string;
     organizationId: string;
     createTime: string;
-    updateTime?: string;
+    updateTime: string | undefined;
     status: ThemeStatusType;
     creator: User;
     owners: User[];
     watchers: User[];
 
-    createTimeText?: string;
-    updateTimeText?: string;
-    isWatching?: boolean;
-    isHovering?: boolean;
-    watchersEmails?: string;
-    ownersEmails?: string;
-    isOwner?: boolean;
-}
+    createTimeText: string | undefined;
+    updateTimeText: string | undefined;
+    isWatching: boolean | undefined;
+    isHovering: boolean | undefined;
+    watchersEmails: string | undefined;
+    ownersEmails: string | undefined;
+    isOwner: boolean | undefined;
+};
 
-export interface ThemesResult {
+export type ThemesResult = {
     themes: Theme[];
     totalCount: number;
-}
+};
 
-export interface ThemesResponse extends Response, ThemesResult { }
+export type ThemesResponse = Response & ThemesResult;
 
 export const enum ThemeStatus {
     open,
@@ -117,42 +117,42 @@ export const themePushEvents = stringEnumify({
 });
 
 
-export interface Scope {
+export type Scope = {
     name: string;
     description: string;
-}
+};
 
-export interface ScopesResult {
+export type ScopesResult = {
     scopes: Scope[];
-}
+};
 
-export interface ScopesResponse extends Response, ScopesResult { }
+export type ScopesResponse = Response & ScopesResult;
 
 
-export interface Application {
+export type Application = {
     id: string;
     name: string;
     homeUrl: string;
     description: string;
-    authorizationCallbackUrl?: string;
-    clientId?: string;
-    clientSecret?: string;
-    creator?: User;
-    scopes?: Scope[];
-    lastUsed?: string;
-}
+    authorizationCallbackUrl: string | undefined;
+    clientId: string | undefined;
+    clientSecret: string | undefined;
+    creator: User | undefined;
+    scopes: Scope[] | undefined;
+    lastUsed: string | undefined;
+};
 
-export interface ApplicationsResult {
+export type ApplicationsResult = {
     applications: Application[];
-}
+};
 
-export interface ApplicationsResponse extends Response, ApplicationsResult { }
+export type ApplicationsResponse = Response & ApplicationsResult;
 
-export interface ApplicationResult {
+export type ApplicationResult = {
     application: Application;
-}
+};
 
-export interface ApplicationResponse extends Response, ApplicationResult { }
+export type ApplicationResponse = Response & ApplicationResult;
 
 
 export type LoginStatus = "unknown" | "fail" | "success";
@@ -165,51 +165,51 @@ export const loginStatus = stringEnumify({
 
 
 
-export interface Self<T> {
-    state?: T;
-    setState?: (state: T, callback?: () => void) => void;
-    replaceState?: (state: T, callback?: () => void) => void;
-    isMounted?: () => boolean;
-    componentDidMount?: () => void;
-    componentWillUnmount?: () => void;
-    getInitialState?: () => T;
+export type Self<T> = {
+    state: T | undefined;
+    setState: ((state: T, callback: (() => void) | undefined) => void) | undefined;
+    replaceState: ((state: T, callback: (() => void) | undefined) => void) | undefined;
+    isMounted: (() => boolean) | undefined;
+    componentDidMount: (() => void) | undefined;
+    componentWillUnmount: (() => void) | undefined;
+    getInitialState: (() => T) | undefined;
     render: () => any;
-}
+};
 
 export const enum OrganizationStatus {
     normal
 }
 
-export interface VersionResult {
+export type VersionResult = {
     version: string;
-}
+};
 
-export interface VersionResponse extends Response, VersionResult { }
+export type VersionResponse = Response & VersionResult;
 
-export interface CaptchaResult {
+export type CaptchaResult = {
     url: string;
-    code?: string;
-}
+    code: string | undefined;
+};
 
-export interface CaptchaResponse extends Response, CaptchaResult { }
+export type CaptchaResponse = Response & CaptchaResult;
 
-export interface TokenResult {
-    url?: string;
-}
+export type TokenResult = {
+    url: string | undefined;
+};
 
-export interface TokenResponse extends Response, TokenResult { }
+export type TokenResponse = Response & TokenResult;
 
 
-export interface Document {
+export type Document = {
     url: string;
     method: HttpMethod;
     documentUrl: string;
-}
+};
 
-export interface ObsoleteDocument extends Document {
+export type ObsoleteDocument = Document & {
     versionRange: string;
     expiredDate: string;
-}
+};
 
 export type Environment = "development" | "test" | "production";
 
@@ -219,9 +219,9 @@ export const environment = stringEnumify({
     production: "production",
 });
 
-export interface TemperaryResponse extends Response {
+export type TemperaryResponse = Response & {
     names: string[];
-}
+};
 
 export type ScopeName = "read:user" | "write:user"
     | "read:organization" | "write:organization"
@@ -244,26 +244,26 @@ export const scopeNames = stringEnumify({
     deleteAccessToken: "delete:access_token",
 });
 
-export interface AccessToken {
+export type AccessToken = {
     id: string;
     description: string;
-    scopes?: Scope[];
-    lastUsed: string;
-}
+    scopes: Scope[] | undefined;
+    lastUsed: string | undefined;
+};
 
-export interface AccessTokensResult {
+export type AccessTokensResult = {
     accessTokens: AccessToken[];
-}
+};
 
-export interface AccessTokensResponse extends Response, AccessTokensResult { }
+export type AccessTokensResponse = Response & AccessTokensResult;
 
-export interface AccessTokenResult {
+export type AccessTokenResult = {
     accessToken: string;
-}
+};
 
-export interface AccessTokenResponse extends Response, AccessTokenResult { }
+export type AccessTokenResponse = Response & AccessTokenResult;
 
-export interface TestSeed {
+export type TestSeed = {
     user: {
         email: string;
         name: string;
@@ -304,15 +304,15 @@ export interface TestSeed {
     newAccessToken: {
         description: string;
     };
-}
+};
 
-export interface OAuthCodeValue {
+export type OAuthCodeValue = {
     scopes: string[];
     creator: string;
     application: string;
     state: string;
     confirmed: boolean;
-}
+};
 
 export type OAuthAuthorization = "login" | "authorization";
 
@@ -321,10 +321,9 @@ export const oauthAuthorization = stringEnumify({
     authorization: "authorization",
 });
 
-export interface OAuthAuthorizationResult {
-    pageName?: OAuthAuthorization;
-    code?: string;
-}
+export type OAuthAuthorizationResult = {
+    pageName: OAuthAuthorization | undefined;
+    code: string | undefined;
+};
 
-export interface OAuthAuthorizationResponse extends Response, OAuthAuthorizationResult { }
-
+export type OAuthAuthorizationResponse = Response & OAuthAuthorizationResult;
