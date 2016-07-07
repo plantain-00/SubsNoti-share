@@ -24,19 +24,19 @@ function stringEnumify<T extends { [prop: string]: "" | string }>(obj: T) {
 
 export type Response = {
     status: number;
-    errorMessage: string | undefined;
-    stack: string | undefined;
-    documentUrl: string | undefined;
+    errorMessage?: string;
+    stack?: string;
+    documentUrl?: string;
 };
 
 
 export type User = {
     id: string;
     name: string;
-    email: string | undefined;
+    email?: string;
     avatar: string;
-    createdOrganizationCount: number | undefined;
-    joinedOrganizationCount: number | undefined;
+    createdOrganizationCount?: number;
+    joinedOrganizationCount?: number;
 };
 
 export type UserResult = {
@@ -68,19 +68,19 @@ export type Theme = {
     detail: string;
     organizationId: string;
     createTime: string;
-    updateTime: string | undefined;
+    updateTime?: string;
     status: ThemeStatusType;
     creator: User;
     owners: User[];
     watchers: User[];
 
-    createTimeText: string | undefined;
-    updateTimeText: string | undefined;
-    isWatching: boolean | undefined;
-    isHovering: boolean | undefined;
-    watchersEmails: string | undefined;
-    ownersEmails: string | undefined;
-    isOwner: boolean | undefined;
+    createTimeText?: string;
+    updateTimeText?: string;
+    isWatching?: boolean;
+    isHovering?: boolean;
+    watchersEmails?: string;
+    ownersEmails?: string;
+    isOwner?: boolean;
 };
 
 export type ThemesResult = {
@@ -134,12 +134,12 @@ export type Application = {
     name: string;
     homeUrl: string;
     description: string;
-    authorizationCallbackUrl: string | undefined;
-    clientId: string | undefined;
-    clientSecret: string | undefined;
-    creator: User | undefined;
-    scopes: Scope[] | undefined;
-    lastUsed: string | undefined;
+    authorizationCallbackUrl?: string;
+    clientId?: string;
+    clientSecret?: string;
+    creator?: User;
+    scopes?: Scope[];
+    lastUsed?: string;
 };
 
 export type ApplicationsResult = {
@@ -166,13 +166,13 @@ export const loginStatus = stringEnumify({
 
 
 export type Self<T> = {
-    state: T | undefined;
-    setState: ((state: T, callback: (() => void) | undefined) => void) | undefined;
-    replaceState: ((state: T, callback: (() => void) | undefined) => void) | undefined;
-    isMounted: (() => boolean) | undefined;
-    componentDidMount: (() => void) | undefined;
-    componentWillUnmount: (() => void) | undefined;
-    getInitialState: (() => T) | undefined;
+    state?: T;
+    setState?: (state: T, callback?: () => void) => void;
+    replaceState?: (state: T, callback?: () => void) => void;
+    isMounted?: () => boolean;
+    componentDidMount?: () => void;
+    componentWillUnmount?: () => void;
+    getInitialState?: () => T;
     render: () => any;
 };
 
@@ -188,13 +188,13 @@ export type VersionResponse = Response & VersionResult;
 
 export type CaptchaResult = {
     url: string;
-    code: string | undefined;
+    code?: string;
 };
 
 export type CaptchaResponse = Response & CaptchaResult;
 
 export type TokenResult = {
-    url: string | undefined;
+    url?: string;
 };
 
 export type TokenResponse = Response & TokenResult;
@@ -247,8 +247,8 @@ export const scopeNames = stringEnumify({
 export type AccessToken = {
     id: string;
     description: string;
-    scopes: Scope[] | undefined;
-    lastUsed: string | undefined;
+    scopes?: Scope[];
+    lastUsed?: string;
 };
 
 export type AccessTokensResult = {
@@ -322,8 +322,8 @@ export const oauthAuthorization = stringEnumify({
 });
 
 export type OAuthAuthorizationResult = {
-    pageName: OAuthAuthorization | undefined;
-    code: string | undefined;
+    pageName?: OAuthAuthorization;
+    code?: string;
 };
 
 export type OAuthAuthorizationResponse = Response & OAuthAuthorizationResult;
