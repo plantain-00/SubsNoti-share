@@ -12,13 +12,13 @@
     "type": "git",
     "url": "git+https://github.com/plantain-00/SubsNoti-share.git"
   },
-  "author": "yao",
-  "license": "ISC",
+  "author": "York Yao",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/plantain-00/SubsNoti-share/issues"
   },
   "homepage": "https://github.com/plantain-00/SubsNoti-share#readme",
   "devDependencies": {
-    "typescript": "^2.0.0-dev.20160706"
+    "typescript": "2.1.4"
   }
 }

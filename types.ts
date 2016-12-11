@@ -3,24 +3,19 @@ export const no = "X";
 
 export type ResponseType = "json" | "others";
 
-export const responseType = stringEnumify({
+export const responseType = {
     json: "json",
     others: "others",
-});
+};
 
 export type HttpMethod = "get" | "post" | "put" | "delete";
 
-export const httpMethod = stringEnumify({
+export const httpMethod = {
     get: "get",
     post: "post",
     put: "put",
     delete: "delete",
-});
-
-
-function stringEnumify<T extends { [prop: string]: "" | string }>(obj: T) {
-    return obj;
-}
+};
 
 export type Response = {
     status: number;
@@ -97,24 +92,24 @@ export const enum ThemeStatus {
 
 export type ThemeStatusType = "open" | "closed";
 
-export const themeStatus = stringEnumify({
+export const themeStatus = {
     open: "open",
     closed: "closed",
-});
+};
 
 export type ThemeOrder = "newest" | "recently updated";
 
-export const themeOrder = stringEnumify({
+export const themeOrder = {
     newest: "newest",
     recentlyUpdated: "recently updated",
-});
+};
 
 export type ThemePushEvent = "theme created" | "theme updated";
 
-export const themePushEvents = stringEnumify({
+export const themePushEvents = {
     themeCreated: "theme created",
     themeUpdated: "theme updated",
-});
+};
 
 
 export type Scope = {
@@ -157,11 +152,11 @@ export type ApplicationResponse = Response & ApplicationResult;
 
 export type LoginStatus = "unknown" | "fail" | "success";
 
-export const loginStatus = stringEnumify({
+export const loginStatus = {
     unknown: "unknown",
     fail: "fail",
     success: "success",
-});
+};
 
 
 
@@ -213,11 +208,11 @@ export type ObsoleteDocument = Document & {
 
 export type Environment = "development" | "test" | "production";
 
-export const environment = stringEnumify({
+export const environment = {
     development: "development",
     test: "test",
     production: "production",
-});
+};
 
 export type TemperaryResponse = Response & {
     names: string[];
@@ -229,7 +224,7 @@ export type ScopeName = "read:user" | "write:user"
     | "read:application" | "write:application" | "delete:application"
     | "read:access_token" | "write:access_token" | "delete:access_token";
 
-export const scopeNames = stringEnumify({
+export const scopeNames = {
     readUser: "read:user",
     writeUser: "write:user",
     readOrganization: "read:organization",
@@ -242,7 +237,7 @@ export const scopeNames = stringEnumify({
     readAccessToken: "read:access_token",
     writeAccessToken: "write:access_token",
     deleteAccessToken: "delete:access_token",
-});
+};
 
 export type AccessToken = {
     id: string;
@@ -316,10 +311,10 @@ export type OAuthCodeValue = {
 
 export type OAuthAuthorization = "login" | "authorization";
 
-export const oauthAuthorization = stringEnumify({
+export const oauthAuthorization = {
     login: "login",
     authorization: "authorization",
-});
+};
 
 export type OAuthAuthorizationResult = {
     pageName?: OAuthAuthorization;
