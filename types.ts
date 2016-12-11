@@ -11,10 +11,10 @@ export const responseType = {
 export type HttpMethod = "get" | "post" | "put" | "delete";
 
 export const httpMethod = {
-    get: "get",
-    post: "post",
-    put: "put",
-    delete: "delete",
+    get: "get" as "get",
+    post: "post" as "post",
+    put: "put" as "put",
+    delete: "delete" as "delete",
 };
 
 export type Response = {
