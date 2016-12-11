@@ -4,8 +4,8 @@ export const no = "X";
 export type ResponseType = "json" | "others";
 
 export const responseType = {
-    json: "json",
-    others: "others",
+    json: "json" as "json",
+    others: "others" as "others",
 };
 
 export type HttpMethod = "get" | "post" | "put" | "delete";
@@ -93,22 +93,22 @@ export const enum ThemeStatus {
 export type ThemeStatusType = "open" | "closed";
 
 export const themeStatus = {
-    open: "open",
-    closed: "closed",
+    open: "open" as "open",
+    closed: "closed" as "closed",
 };
 
 export type ThemeOrder = "newest" | "recently updated";
 
 export const themeOrder = {
-    newest: "newest",
-    recentlyUpdated: "recently updated",
+    newest: "newest" as "newest",
+    recentlyUpdated: "recently updated" as "recently updated",
 };
 
 export type ThemePushEvent = "theme created" | "theme updated";
 
 export const themePushEvents = {
-    themeCreated: "theme created",
-    themeUpdated: "theme updated",
+    themeCreated: "theme created" as "theme created",
+    themeUpdated: "theme updated" as "theme updated",
 };
 
 
@@ -153,9 +153,9 @@ export type ApplicationResponse = Response & ApplicationResult;
 export type LoginStatus = "unknown" | "fail" | "success";
 
 export const loginStatus = {
-    unknown: "unknown",
-    fail: "fail",
-    success: "success",
+    unknown: "unknown" as "unknown",
+    fail: "fail" as "fail",
+    success: "success" as "success",
 };
 
 
@@ -209,9 +209,9 @@ export type ObsoleteDocument = Document & {
 export type Environment = "development" | "test" | "production";
 
 export const environment = {
-    development: "development",
-    test: "test",
-    production: "production",
+    development: "development" as "development",
+    test: "test" as "test",
+    production: "production" as "production",
 };
 
 export type TemperaryResponse = Response & {
@@ -225,18 +225,18 @@ export type ScopeName = "read:user" | "write:user"
     | "read:access_token" | "write:access_token" | "delete:access_token";
 
 export const scopeNames = {
-    readUser: "read:user",
-    writeUser: "write:user",
-    readOrganization: "read:organization",
-    writeOrganization: "write:organization",
-    readTheme: "read:theme",
-    writeTheme: "write:theme",
-    readApplication: "read:application",
-    writeApplication: "write:application",
-    deleteApplication: "delete:application",
-    readAccessToken: "read:access_token",
-    writeAccessToken: "write:access_token",
-    deleteAccessToken: "delete:access_token",
+    readUser: "read:user" as "read:user",
+    writeUser: "write:user" as "write:user",
+    readOrganization: "read:organization" as "read:organization",
+    writeOrganization: "write:organization" as "write:organization",
+    readTheme: "read:theme" as "read:theme",
+    writeTheme: "write:theme" as "write:theme",
+    readApplication: "read:application" as "read:application",
+    writeApplication: "write:application" as "write:application",
+    deleteApplication: "delete:application" as "delete:application",
+    readAccessToken: "read:access_token" as "read:access_token",
+    writeAccessToken: "write:access_token" as "write:access_token",
+    deleteAccessToken: "delete:access_token" as "delete:access_token",
 };
 
 export type AccessToken = {
@@ -312,8 +312,8 @@ export type OAuthCodeValue = {
 export type OAuthAuthorization = "login" | "authorization";
 
 export const oauthAuthorization = {
-    login: "login",
-    authorization: "authorization",
+    login: "login" as "login",
+    authorization: "authorization" as "authorization",
 };
 
 export type OAuthAuthorizationResult = {
